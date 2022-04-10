@@ -15,7 +15,7 @@ public class FortuneController {
 	@GetMapping("/fortune")
 	public String getFortune() {
 
-		// helloWorld.htmlに遷移する
+		// fortune.htmlに遷移する
 		return "fortune";
 	}
 
@@ -56,7 +56,7 @@ public class FortuneController {
 		int goods = (int) (Math.random() * (fortune.length));
 		model.addAttribute("goods", pointGoods[goods]);
 
-		// helloResponse.htmlに遷移する
+		// fortune-response.htmlに遷移する
 		return "fortune/fortune-response";
 	}
 	
