@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	</meta>
+	<title>Hello Response</title>
+	<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<h1>HelloResponse!!</h1>
+	<div class="result_wrapper">
+		<p th:text="こんにちは + ${nameResponse} + さん"></p>
+		<p th:text="今日 + ${datetime} + の運勢は" class="result_title"></p>
+		<div class="result">
+			<p>全体運：</p>
+			<p th:text="${result}"></p>
+		</div>
+		<div class="result">
+			<p>健康運：</p>
+			<p th:text="${health}"></p>
+		</div>
+		<div class="result">
+			<p>恋愛運：</p>
+			<p th:text="${love}"></p>
+		</div>
+		<div class="result">
+			<p>金銭運：</p>
+			<p th:text="${money}"></p>
+		</div>
+		<div class="result">
+			<p>ラッキアイテム：</p>
+			<p th:text="${goods}"></p>
+		</div>
+	</div>
+
+	<a href="fortune" class="back_button">戻る</a>
+
+</body>
+
+</html>

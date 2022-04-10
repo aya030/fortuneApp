@@ -1,0 +1,68 @@
+body {
+  margin:100px;
+}
+p{
+  font-size: 18px;
+}
+
+/*----
+/*fortune.html
+----*/
+.fortune_wrapper {	
+	width: 400px;
+	padding: 20px 50px;
+	border-left: 20px solid #66cdaa;
+	box-shadow: 3px 3px #ccc;
+    padding-bottom: 60px;
+}
+input:first-of-type {
+	height: 24px;
+	width: 250px;
+}
+input:last-of-type {
+	color: #fff;
+	background: #66cdaa;
+	border:none;
+	padding: 5px 10px;
+	border-radius: 3px;
+	box-shadow: 1px 1px #ccc;
+}
+input:last-of-type:hover {
+	opacity: 0.8;
+}
+
+/*----
+/*fortune-response.html
+----*/
+.result_wrapper {
+	width: 400px;
+	padding: 20px 50px;
+	border-left: 20px solid #4169e1;
+	box-shadow: 3px 3px #ccc;
+}
+.result_title {
+	border-bottom: 3px solid #4169e1;
+}
+.result {
+	display: flex;
+	height: 40px;
+}
+.result:last-child {
+	margin-bottom: 40px;
+}
+.result p:last-child {
+	color:#ffa500;
+}
+.back_button {
+	display: inline-block;
+	margin-top: 50px;
+	padding: 10px 20px;
+	color: #fff;
+	background-color: #4169e1;
+	text-decoration: none;
+	border-radius:5px;
+}
+.back_button:hover {
+	opacity: 0.8;
+}
+
