@@ -26,21 +26,21 @@ public class FortuneService {
 		model.addAttribute("result", fortune[allFortune]);
 
 		// 健康運
-		int health = (int) (Math.random() * (fortune.length));
-		model.addAttribute("health", fortune[health]);
+		int healthFortune = (int) (Math.random() * (fortune.length));
+		model.addAttribute("health", fortune[healthFortune]);
 
 		// 恋愛運
-		int love = (int) (Math.random() * (fortune.length));
-		model.addAttribute("love", fortune[love]);
+		int loveFortune = (int) (Math.random() * (fortune.length));
+		model.addAttribute("love", fortune[loveFortune]);
 
 		// 金運
-		int money = (int) (Math.random() * (fortune.length));
-		model.addAttribute("money", fortune[money]);
+		int moneyFortune = (int) (Math.random() * (fortune.length));
+		model.addAttribute("money", fortune[moneyFortune]);
 
 		// ラッキーカラー
 		String[] pointGoods = { "タンブラー", "お菓子", "チューリップ", "画集", "ネックレス" };
-		int goods = (int) (Math.random() * (fortune.length));
-		model.addAttribute("goods", pointGoods[goods]);
+		int goodsFortune = (int) (Math.random() * (fortune.length));
+		model.addAttribute("goods", pointGoods[goodsFortune]);
 	}
 
 }
