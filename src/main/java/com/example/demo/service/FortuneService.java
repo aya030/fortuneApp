@@ -11,10 +11,9 @@ public class FortuneService {
 
 	public static void date(Model model) {
 		// 今日の日付を表示する
-		LocalDate date = LocalDate.now();
+		LocalDate currentDate = LocalDate.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-		String now = date.format(formatter);
-		model.addAttribute("datetime", now);
+		model.addAttribute("datetime", currentDate.format(formatter));
 	}
 
 	public static void fortuneTelling(Model model) {
