@@ -4,39 +4,41 @@
 <head>
 	<meta charset="UTF-8">
 	</meta>
-	<title>Hello Response</title>
+	<title>Fortune-App</title>
 	<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
-	<h1>HelloResponse!!</h1>
-	<div class="result_wrapper">
-		<p th:text="こんにちは + ${name} + さん"></p>
-		<p th:text="今日 + ${datetime} + の運勢は" class="result_title"></p>
-		<div class="result">
-			<p>全体運：</p>
-			<p th:text="${result}"></p>
+	<div class="wrapper">
+		<h1 class="title"><span>Your fortune today</span><br>占い結果</h1>
+		<div class="result_wrapper">
+			<p th:text="こんにちは + ${name} + さん"></p>
+			<h2 th:text="${datetime} + の運勢は" class="result_title"></h2>
+			<div class="result">
+				<p>全体運：</p>
+				<p th:text="${result}"></p>
+			</div>
+			<div class="result">
+				<p>健康運：</p>
+				<p th:text="${health}"></p>
+			</div>
+			<div class="result">
+				<p>恋愛運：</p>
+				<p th:text="${love}"></p>
+			</div>
+			<div class="result">
+				<p>金銭運：</p>
+				<p th:text="${money}"></p>
+			</div>
+			<div class="result">
+				<p>ラッキアイテム：</p>
+				<p th:text="${goods}"></p>
+			</div>
 		</div>
-		<div class="result">
-			<p>健康運：</p>
-			<p th:text="${health}"></p>
-		</div>
-		<div class="result">
-			<p>恋愛運：</p>
-			<p th:text="${love}"></p>
-		</div>
-		<div class="result">
-			<p>金銭運：</p>
-			<p th:text="${money}"></p>
-		</div>
-		<div class="result">
-			<p>ラッキアイテム：</p>
-			<p th:text="${goods}"></p>
-		</div>
+
+		<a href="fortune" class="back_button">戻る</a>
 	</div>
-
-	<a href="fortune" class="back_button">戻る</a>
-
 </body>
 
 </html>

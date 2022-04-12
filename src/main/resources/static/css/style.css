@@ -1,5 +1,26 @@
 body {
-  margin:100px;
+  margin:70px 100px;
+  background-color: #eedcb3;
+}
+.wrapper {
+  background-color: #fff;
+  height: 700px;
+  border-radius: 20px;
+}
+h1 {
+  font-size: 26px;
+  margin-bottom: 24px;
+  padding-top: 50px;
+  text-align: center;
+  line-height: 1.5;
+}
+h1 span {
+  color:#EDA6C4;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+}
+h2 {
+  font-size: 20px;
 }
 p{
   font-size: 18px;
@@ -10,10 +31,10 @@ p{
 ----*/
 .fortune_wrapper {	
 	width: 400px;
-	padding: 20px 50px;
-	border-left: 20px solid #66cdaa;
+    margin: 0 auto;
+	padding: 20px 50px 60px;
+	border-left: 20px solid #EDA6C4;
 	box-shadow: 3px 3px #ccc;
-    padding-bottom: 60px;
 }
 input:first-of-type {
 	height: 24px;
@@ -21,7 +42,7 @@ input:first-of-type {
 }
 input:last-of-type {
 	color: #fff;
-	background: #66cdaa;
+	background: #EDA6C4;
 	border:none;
 	padding: 5px 10px;
 	border-radius: 3px;
@@ -36,12 +57,16 @@ input:last-of-type:hover {
 ----*/
 .result_wrapper {
 	width: 400px;
+    margin: 0 auto;
 	padding: 20px 50px;
-	border-left: 20px solid #4169e1;
+	border-left: 20px solid #9AB4ED;
 	box-shadow: 3px 3px #ccc;
 }
+.title span {
+  color:#9AB4ED;
+}
 .result_title {
-	border-bottom: 3px solid #4169e1;
+	border-bottom: 3px solid #9AB4ED;
 }
 .result {
 	display: flex;
@@ -54,13 +79,15 @@ input:last-of-type:hover {
 	color:#ffa500;
 }
 .back_button {
-	display: inline-block;
-	margin-top: 50px;
-	padding: 10px 20px;
-	color: #fff;
-	background-color: #4169e1;
+	display: block;
+	width: 400px;
+	border-radius: 10px;
+    color: #fff;
+    text-align: center;
+	background-color: #586FA1;
 	text-decoration: none;
-	border-radius:5px;
+	margin: 50px auto;
+	padding: 10px 20px;
 }
 .back_button:hover {
 	opacity: 0.8;
