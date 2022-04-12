@@ -15,7 +15,6 @@ public class FortuneController {
 	@GetMapping("/fortune")
 	public String getFortune() {
 
-		// fortune.htmlに遷移する
 		return "fortune";
 	}
 
@@ -28,7 +27,7 @@ public class FortuneController {
 		FortuneService.date(model);
 		FortuneService.fortuneTelling(model);
 
-		// fortune-response.htmlに遷移する
+		// 画面遷移
 		return "fortune/fortune-response";
 	}
 	
