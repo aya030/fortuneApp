@@ -9,11 +9,11 @@ import org.springframework.ui.Model;
 @Service
 public class FortuneService {
 
-	public static void date(Model model) {
+	public static void currentDate(Model model) {
 		// 今日の日付を表示する
-		LocalDate currentDate = LocalDate.now();
+		LocalDate now = LocalDate.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-		model.addAttribute("datetime", currentDate.format(formatter));
+		model.addAttribute("datetime", now.format(formatter));
 	}
 
 	public static void fortuneTelling(Model model) {

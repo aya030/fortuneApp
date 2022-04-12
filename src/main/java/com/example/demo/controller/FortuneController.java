@@ -24,7 +24,7 @@ public class FortuneController {
 		// inputで入力された名前を表示
 		model.addAttribute("name", name);
 
-		FortuneService.date(model);
+		FortuneService.currentDate(model);
 		FortuneService.fortuneTelling(model);
 
 		// 画面遷移
