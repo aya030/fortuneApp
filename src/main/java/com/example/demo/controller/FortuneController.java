@@ -1,8 +1,6 @@
 package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,10 +20,10 @@ public class FortuneController {
 	}
 
 	@PostMapping("/fortune")
-	public String postFortune(@RequestParam("nameResponse") String name, Model model) {
+	public String postFortune(@RequestParam("name") String name, Model model) {
 		
 		// inputで入力された名前を表示
-		model.addAttribute("nameResponse", name);
+		model.addAttribute("name", name);
 
 		FortuneService.date(model);
 		FortuneService.fortuneTelling(model);
