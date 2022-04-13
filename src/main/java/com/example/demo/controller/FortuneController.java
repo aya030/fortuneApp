@@ -14,21 +14,40 @@ public class FortuneController {
 
 	@GetMapping("/fortune")
 	public String getFortune() {
-
 		return "fortune";
 	}
 
 	@PostMapping("/fortune")
 	public String postFortune(@RequestParam("name") String name, Model model) {
-		
-		// inputで入力された名前を表示
+
+		FortuneService fortuneService = new FortuneService();
+
+		/*----------------------
+		 * inputで入力された値
+		 ---------------------- */
 		model.addAttribute("name", name);
 
-		FortuneService.currentDate(model);
-		FortuneService.fortuneTelling(model);
+		/*----------------------
+		 * 今日の日付
+		 ---------------------- */
+		model.addAttribute("datetime", fortuneService.currentDate(model));
+
+		/*----------------------
+		 * 運勢一覧
+		 ---------------------- */
+		// 全体運
+		model.addAttribute("result", fortuneService.fortuneTelling(model)[0]);
+		// 健康運
+		model.addAttribute("health", fortuneService.fortuneTelling(model)[1]);
+		// 恋愛運
+		model.addAttribute("love", fortuneService.fortuneTelling(model)[2]);
+		// 金銭運
+		model.addAttribute("money", fortuneService.fortuneTelling(model)[3]);
+		// ラッキーアイテム
+		model.addAttribute("goods", fortuneService.fortuneTelling(model)[4]);
 
 		// 画面遷移
 		return "fortune/fortune-response";
 	}
-	
+
 }

@@ -9,37 +9,41 @@ import org.springframework.ui.Model;
 @Service
 public class FortuneService {
 
-	public static void currentDate(Model model) {
-		// 今日の日付を表示する
+	public String currentDate(Model model) {
 		LocalDate now = LocalDate.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-		model.addAttribute("datetime", now.format(formatter));
+		String currentDate = now.format(formatter);
+		return currentDate;
 	}
 
-	public static void fortuneTelling(Model model) {
+	
+	public String[] fortuneTelling(Model model) {
 		// 運勢
 		String[] fortune = { "★★★★★", "★★★★", "★★★", "★★", "★" };
 
 		// 全体運
-		int allFortune = (int) (Math.random() * (fortune.length));
-		model.addAttribute("result", fortune[allFortune]);
+		int allFortuneNum = (int) (Math.random() * (fortune.length));
+		String allFortune = fortune[allFortuneNum];
 
 		// 健康運
-		int healthFortune = (int) (Math.random() * (fortune.length));
-		model.addAttribute("health", fortune[healthFortune]);
+		int healthFortuneNum = (int) (Math.random() * (fortune.length));
+		String healthFortune = fortune[healthFortuneNum];
 
 		// 恋愛運
-		int loveFortune = (int) (Math.random() * (fortune.length));
-		model.addAttribute("love", fortune[loveFortune]);
+		int loveFortuneNum = (int) (Math.random() * (fortune.length));
+		String loveFortune = fortune[loveFortuneNum];
 
 		// 金運
-		int moneyFortune = (int) (Math.random() * (fortune.length));
-		model.addAttribute("money", fortune[moneyFortune]);
+		int moneyFortuneNum = (int) (Math.random() * (fortune.length));
+		String moneyFortune = fortune[moneyFortuneNum];
 
-		// ラッキーカラー
+		// ラッキーアイテム
 		String[] pointGoods = { "タンブラー", "お菓子", "チューリップ", "画集", "ネックレス" };
-		int goodsFortune = (int) (Math.random() * (fortune.length));
-		model.addAttribute("goods", pointGoods[goodsFortune]);
+		int goodsFortuneNum = (int) (Math.random() * (fortune.length));
+		String goodsFortune = pointGoods[goodsFortuneNum];
+		
+		String[] fortuneTelling = {allFortune,healthFortune,loveFortune,moneyFortune,goodsFortune};
+		return fortuneTelling;
 	}
 
 }
