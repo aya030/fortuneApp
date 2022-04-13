@@ -4,12 +4,11 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 
 @Service
 public class FortuneService {
 
-	public String currentDate(Model model) {
+	public String currentDate() {
 		LocalDate now = LocalDate.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 		String currentDate = now.format(formatter);
@@ -17,7 +16,7 @@ public class FortuneService {
 	}
 
 	
-	public String[] fortuneTelling(Model model) {
+	public String[] fortuneTelling() {
 		// 運勢
 		String[] fortune = { "★★★★★", "★★★★", "★★★", "★★", "★" };
 
