@@ -18,14 +18,14 @@ h1 {
   line-height: 1.5;
 }
 h1 span {
-  color:#EDA6C4;
+  color: #EDA6C4;
   font-size: 18px;
   font-family: 'Montserrat', sans-serif;
 }
 h2 {
   font-size: 20px;
 }
-p{
+p {
   font-size: 18px;
 }
 
@@ -46,7 +46,7 @@ input:first-of-type {
 input:last-of-type {
   color: #fff;
   background: #EDA6C4;
-  border:none;
+  border: none;
   padding: 5px 10px;
   border-radius: 3px;
   box-shadow: 1px 1px #ccc;
@@ -54,7 +54,6 @@ input:last-of-type {
 input:last-of-type:hover {
   opacity: 0.8;
 }
-
 /*----
 /*fortune-response.html
 ----*/
@@ -66,7 +65,7 @@ input:last-of-type:hover {
   box-shadow: 3px 3px #ccc;
 }
 .title span {
-  color:#9AB4ED;
+  color: #9AB4ED;
 }
 .result_title {
   border-bottom: 3px solid #9AB4ED;
@@ -79,7 +78,7 @@ input:last-of-type:hover {
   margin-bottom: 40px;
 }
 .result p:last-child {
-  color:#ffa500;
+  color: #ffa500;
 }
 .back_button {
   display: block;
