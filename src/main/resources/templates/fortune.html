@@ -4,20 +4,23 @@
 <head>
 	<meta charset="UTF-8">
 	</meta>
-	<title>Hello World</title>
+	<title>Fortune-App</title>
 	<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
-	<h1>HelloWorld!!</h1>
-	
-	<div class="fortune_wrapper">
-		<h2>あなたの今日の運勢を占います</h2>
-		<form method="post" action="/fortune">
-			<p>名前を入力してください</p>
-			<input type="text" name="nameResponse">
-			<input type="submit" value="占う">
-		</form>
+	<div class="wrapper">
+		<h1><span>Fortune-telling your fortune today</span><br>運勢占い</h1>
+
+		<div class="fortune_wrapper">
+			<h2>あなたの今日の運勢を占います</h2>
+			<form method="post" action="/fortune">
+				<p>名前を入力してください</p>
+				<input type="text" name="name">
+				<input type="submit" value="占う">
+			</form>
+		</div>
 	</div>
 </body>
 

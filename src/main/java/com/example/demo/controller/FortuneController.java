@@ -1,63 +1,58 @@
 package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.demo.service.FortuneService;
+
 @Controller
 public class FortuneController {
 
+	// DI対象
+	private final FortuneService fortuneService;
+
+	public FortuneController(FortuneService fortuneService) {
+		this.fortuneService = fortuneService;
+	}
+
 	@GetMapping("/fortune")
 	public String getFortune() {
-
-		// fortune.htmlに遷移する
 		return "fortune";
 	}
 
 	@PostMapping("/fortune")
-	public String postFortune(@RequestParam("nameResponse") String name, Model model) {
-		
-		// inputで入力された名前を表示
-		model.addAttribute("nameResponse", name);
+	public String postFortune(@RequestParam("name") String name, Model model) {
 
-		// 今日の日付を表示する
-		LocalDate date = LocalDate.now();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-		String now = date.format(formatter);
-		model.addAttribute("datetime", now);
-		
+		/*----------------------
+		 * inputで入力された値
+		 ---------------------- */
+		model.addAttribute("name", name);
 
-		// 運勢
-		String[] fortune = { "★★★★★", "★★★★", "★★★", "★★", "★" };
-		
+		/*----------------------
+		 * 今日の日付
+		 ---------------------- */
+		model.addAttribute("datetime", fortuneService.currentDate());
+
+		/*----------------------
+		 * 運勢一覧
+		 ---------------------- */
 		// 全体運
-		int allFortune = (int) (Math.random() * (fortune.length));
-		model.addAttribute("result", fortune[allFortune]);
-		
+		model.addAttribute("result", fortuneService.fortuneTelling()[0]);
 		// 健康運
-		int health = (int) (Math.random() * (fortune.length));
-		model.addAttribute("health", fortune[health]);
-		
+		model.addAttribute("health", fortuneService.fortuneTelling()[1]);
 		// 恋愛運
-		int love = (int) (Math.random() * (fortune.length));
-		model.addAttribute("love", fortune[love]);
-		
-		// 金運
-		int money = (int) (Math.random() * (fortune.length));
-		model.addAttribute("money", fortune[money]);
+		model.addAttribute("love", fortuneService.fortuneTelling()[2]);
+		// 金銭運
+		model.addAttribute("money", fortuneService.fortuneTelling()[3]);
+		// ラッキーアイテム
+		model.addAttribute("goods", fortuneService.fortuneTelling()[4]);
 
-		// ラッキーカラー
-		String[] pointGoods = { "タンブラー", "お菓子", "チューリップ", "画集", "ネックレス" };
-		int goods = (int) (Math.random() * (fortune.length));
-		model.addAttribute("goods", pointGoods[goods]);
-
-		// fortune-response.htmlに遷移する
+		// 画面遷移
 		return "fortune/fortune-response";
 	}
-	
+
 }
